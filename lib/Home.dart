@@ -11,7 +11,7 @@ import 'Home/Peas.dart';
 import 'Home/Rice.dart';
 import 'Home/Vinegar.dart';
 
-var bannerItems = ['Hotels', 'Safaris', 'love', 'Picnics', 'Entertainment'];
+var bannerItems = ['Beans', 'Peas', 'Ginger', 'Mattoke', 'Potatoes'];
 var bannerImage = [
   'assets/iages.jpeg',
   'assets/images.jpeg',
@@ -35,8 +35,8 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
     items.add(new ScreenHiddenDrawer(
         new ItemHiddenMenu(
           name: "Home",
-          baseStyle:
-              TextStyle(color: Colors.white.withOpacity(0.8), fontSize: 28.0),
+          baseStyle: GoogleFonts.bigShouldersText(
+              color: Colors.white.withOpacity(0.8), fontSize: 28.0),
           colorLineSelected: Colors.teal,
           selectedStyle: null,
         ),
@@ -45,8 +45,8 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
     items.add(new ScreenHiddenDrawer(
         new ItemHiddenMenu(
           name: "Info",
-          baseStyle:
-              TextStyle(color: Colors.white.withOpacity(0.8), fontSize: 28.0),
+          baseStyle: GoogleFonts.bigShouldersText(
+              color: Colors.white.withOpacity(0.8), fontSize: 28.0),
           colorLineSelected: Colors.orange,
           selectedStyle: null,
         ),
@@ -61,7 +61,7 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
       child: HiddenDrawerMenu(
         actionsAppBar: [
           IconButton(
-              icon: Icon(Icons.arrow_back_ios),
+              icon: Icon(Icons.keyboard_backspace),
               onPressed: () {
                 Navigator.of(context).pop();
               }),
@@ -310,7 +310,8 @@ class _HomeState extends State<Home> {
             BannerWidgetArea(),
             Padding(
               padding: EdgeInsets.all(10),
-              child: Lottie.asset('assets/plant.json'),
+              child: Lottie.asset(
+                'assets/plant.json'),
             ),
           ],
         ),
@@ -379,7 +380,8 @@ class _BannerWidgetAreaState extends State<BannerWidgetArea> {
                   children: <Widget>[
                     Text(
                       bannerItems[x],
-                      style: TextStyle(fontSize: 25, color: Colors.white),
+                      style: GoogleFonts.bigShouldersText(
+                          fontSize: 25, color: Colors.white),
                     )
                   ],
                 ),

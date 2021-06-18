@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -14,9 +15,7 @@ class _OneState extends State<One> {
         appBar: AppBar(
           leading: IconButton(
               color: Colors.black,
-              icon: Icon(
-                Icons.arrow_back_ios,
-              ),
+              icon: Icon(Icons.keyboard_backspace),
               onPressed: () {
                 Navigator.of(context).pop();
               }),
@@ -87,14 +86,18 @@ class _OneState extends State<One> {
                       children: [
                         Row(
                           children: [
-                            Container(
-                              height: 50,
-                              width: 50,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(25),
-                                  image: DecorationImage(
-                                      image: AssetImage('assets/index3.jpeg'),
-                                      fit: BoxFit.cover)),
+                            Badge(
+                              badgeContent: Text('3'),
+                              position: BadgePosition.topEnd(),
+                              child: Container(
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(25),
+                                    image: DecorationImage(
+                                        image: AssetImage('assets/index3.jpeg'),
+                                        fit: BoxFit.cover)),
+                              ),
                             ),
                             SizedBox(
                               width: 10,
@@ -224,7 +227,7 @@ class _OneState extends State<One> {
                                   child: Text(
                                     'Smart Farming',
                                     style: GoogleFonts.bigShouldersText(
-                                        fontSize: 10, color: Colors.brown),
+                                        fontSize: 15, color: Colors.brown),
                                   ),
                                 )),
                             SizedBox(
@@ -241,7 +244,7 @@ class _OneState extends State<One> {
                                   child: Text(
                                     'E-Agriculture',
                                     style: GoogleFonts.bigShouldersText(
-                                        fontSize: 10, color: Colors.brown),
+                                        fontSize: 15, color: Colors.brown),
                                   ),
                                 )),
                           ],

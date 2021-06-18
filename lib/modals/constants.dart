@@ -58,6 +58,8 @@ final cartList = [
       price: 296,
       quantity: 0),
 ];
+
+// categoriees page
 final List<String> sliderImages = [
   'assets/avo.jpeg',
   'assets/b.jpeg',
@@ -79,6 +81,8 @@ const cPrimaryLight = Color(0xFFFFFFF3);
 const cAccentColor = Color(0xFFF4C0FF);
 const cTextBlack = Color(0xFF000000);
 
+
+// used on 3.dart page
 class Character {
   final String name;
   final String imgPath;

@@ -29,18 +29,18 @@ class _CartState extends State<Cart> {
         child: Scrollbar(
           child: Scaffold(
             key: scaffoldkey,
-            appBar: AppBar(centerTitle: true,
+            appBar: AppBar(
+              centerTitle: true,
               elevation: 0,
               backgroundColor: Colors.white,
               leading: IconButton(
                   color: Colors.black,
-                  icon: Icon(
-                    Icons.arrow_back_ios,
-                  ),
+                  icon: Icon(Icons.keyboard_backspace),
                   onPressed: () {
                     Navigator.of(context).pop();
                   }),
-              title: Text('Cart', style: GoogleFonts.bigShouldersText(color: Colors.black)),
+              title: Text('Cart',
+                  style: GoogleFonts.bigShouldersText(color: Colors.black)),
               actions: [
                 IconButton(
                     color: Colors.green,
@@ -73,20 +73,20 @@ class _CartState extends State<Cart> {
                   ),
                   ListTile(
                     autofocus: true,
-                    title: Text('Prices'),
+                    title: Text('Prices',style: GoogleFonts.bigShouldersText(),),
                     trailing: Icon(Icons.monetization_on),
                     onTap: () {},
                   ),
                   ListTile(
                     autofocus: true,
-                    title: Text('Account'),
+                    title: Text('Account',style: GoogleFonts.bigShouldersText(),),
                     trailing: Icon(Icons.account_balance),
                     onTap: () {},
                   ),
                   Divider(),
                   ListTile(
                     autofocus: true,
-                    title: Text('Close'),
+                    title: Text('Close',style: GoogleFonts.bigShouldersText(),),
                     trailing: Icon(Icons.cancel),
                     onTap: () => Navigator.of(context).pop(),
                   ),
@@ -156,7 +156,8 @@ class _CartState extends State<Cart> {
                           ),
                           Text(
                             cartList[index].desc,
-                            style: GoogleFonts.bigShouldersText(fontSize: 10, color: Colors.grey),
+                            style: GoogleFonts.bigShouldersText(
+                                fontSize: 10, color: Colors.grey),
                           ),
                           Text("\$ ${cartList[index].price.toString()}"),
                           Row(
@@ -188,8 +189,8 @@ class _CartState extends State<Cart> {
                                         border: InputBorder.none,
                                         hintText:
                                             cartList[index].quantity.toString(),
-                                        hintStyle:
-                                            GoogleFonts.bigShouldersText(color: Colors.black)),
+                                        hintStyle: GoogleFonts.bigShouldersText(
+                                            color: Colors.black)),
                                   )),
                               IconButton(
                                   icon: Icon(
@@ -229,7 +230,14 @@ class _PaymentsState extends State<Payments> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          elevation: 0,
+          title: Text(
+            'Payments',
+            style: GoogleFonts.bigShouldersText(),
+          ),
+          centerTitle: true,
+        ),
       ),
     );
   }

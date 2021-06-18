@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:final_y3/modals/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 class Categoriess extends StatefulWidget {
   Categoriess({Key key}) : super(key: key);
@@ -34,14 +35,13 @@ class _CategoriessState extends State<Categoriess> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      appBar: AppBar(centerTitle: true,
+      appBar: AppBar(
+        centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.white,
         leading: IconButton(
             color: Colors.black,
-            icon: Icon(
-              Icons.arrow_back_ios,
-            ),
+            icon: Icon(Icons.keyboard_backspace),
             onPressed: () {
               Navigator.of(context).pop();
             }),
@@ -50,53 +50,56 @@ class _CategoriessState extends State<Categoriess> {
           style: GoogleFonts.bigShouldersText(color: Colors.black),
         ),
       ),
-      body: Column(
-        children: [
-          Stack(
-            children: [
-              Container(
-                height: 250,
-                child: PageView.builder(
-                  controller: pageController,
-                  onPageChanged: (value) {
-                    setState(() {
-                      currentIndex = value;
-                    });
-                  },
-                  itemCount: sliderImages.length,
-                  itemBuilder: (context, index) {
-                    return Image.asset(
-                      sliderImages[index],
-                      fit: BoxFit.cover,
-                      width: MediaQuery.of(context).size.width,
-                    );
-                  },
+      body: Scrollbar(
+        child: Column(
+          children: [
+            Stack(
+              children: [
+                Container(
+                  height: 250,
+                  child: PageView.builder(
+                    controller: pageController,
+                    onPageChanged: (value) {
+                      setState(() {
+                        currentIndex = value;
+                      });
+                    },
+                    itemCount: sliderImages.length,
+                    itemBuilder: (context, index) {
+                      return Image.asset(
+                        sliderImages[index],
+                        fit: BoxFit.cover,
+                        width: MediaQuery.of(context).size.width,
+                      );
+                    },
+                  ),
                 ),
-              ),
-              Positioned(
-                bottom: 16,
-                left: 0,
-                right: 0,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(
-                    sliderImages.length,
-                    (index) => AnimatedContainer(
-                      duration: Duration(milliseconds: 400),
-                      width: currentIndex == index ? 24 : 8,
-                      height: 8,
-                      margin: EdgeInsets.only(right: 4),
-                      decoration: BoxDecoration(
-                          color:
-                              currentIndex == index ? cOrange : cPrimaryLight,
-                          borderRadius: BorderRadius.circular(8)),
+                Positioned(
+                  bottom: 16,
+                  left: 0,
+                  right: 0,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(
+                      sliderImages.length,
+                      (index) => AnimatedContainer(
+                        duration: Duration(milliseconds: 400),
+                        width: currentIndex == index ? 24 : 8,
+                        height: 8,
+                        margin: EdgeInsets.only(right: 4),
+                        decoration: BoxDecoration(
+                            color:
+                                currentIndex == index ? cOrange : cPrimaryLight,
+                            borderRadius: BorderRadius.circular(8)),
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
-          ), 
-        ],
+              ],
+            ),
+            Lottie.asset('assets/wet.json')
+          ],
+        ),
       ),
     ));
   }

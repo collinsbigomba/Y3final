@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 class Signup extends StatefulWidget {
   @override
   _SignupState createState() => _SignupState();
@@ -32,6 +33,7 @@ class _SignupState extends State<Signup> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextFormField(
+                  style: GoogleFonts.bigShouldersText(),
                   autocorrect: true,
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
@@ -54,6 +56,7 @@ class _SignupState extends State<Signup> {
                   height: 40,
                 ),
                 TextFormField(
+                    style: GoogleFonts.bigShouldersText(),
                     autocorrect: true,
                     keyboardType: TextInputType.visiblePassword,
                     decoration: InputDecoration(
@@ -80,7 +83,7 @@ class _SignupState extends State<Signup> {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Splash()));
                   },
-                  child: Text("Sign up",style: GoogleFonts.bigShouldersText()),
+                  child: Text("Sign up", style: GoogleFonts.bigShouldersText()),
                 ),
               ],
             ),

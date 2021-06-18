@@ -4,6 +4,7 @@ import 'package:final_y3/main.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -40,27 +41,11 @@ class _SplashState extends State<Splash> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xFFEFEBE9),
         body: Container(
           child: Stack(
+            fit: StackFit.expand,
             children: [
-              Positioned(
-                top: 0,
-                left: -70,
-                child: Image.asset('assets/1.jpeg'),
-              ),
-              Positioned(
-                left: -70,
-                bottom: 0,
-                child: Image.asset('assets/1.jpeg'),
-              ),
-              Positioned(
-                child: Image.asset(
-                  'assets/1.jpeg',
-                  width: 250,
-                ),
-                right: -70,
-                bottom: -10,
-              ),
               Positioned(
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 24),
@@ -87,17 +72,20 @@ class _SplashState extends State<Splash> {
                 width: MediaQuery.of(context).size.width,
               ),
               SizedBox(
-                height: 8,
-              ),
-              Text('Experience the best taste  of our quality food products '),
-              SizedBox(
                 height: 20,
               ),
               Container(
+                alignment: Alignment.center,
                 child: CircularProgressIndicator(
                     strokeWidth: 4,
                     valueColor: AlwaysStoppedAnimation<Color>(Colors.black)),
-              )
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Lottie.asset('assets/spal.json'))
             ],
           ),
         ),

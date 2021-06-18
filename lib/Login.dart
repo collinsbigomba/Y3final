@@ -1,4 +1,3 @@
-
 import 'package:final_y3/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -35,6 +34,7 @@ class _LoginState extends State<Login> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextFormField(
+                  style: GoogleFonts.bigShouldersText(),
                   autocorrect: true,
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
@@ -57,6 +57,7 @@ class _LoginState extends State<Login> {
                   height: 40,
                 ),
                 TextFormField(
+                  style: GoogleFonts.bigShouldersText(),
                   autocorrect: true,
                   keyboardType: TextInputType.visiblePassword,
                   decoration: InputDecoration(
@@ -85,12 +86,13 @@ class _LoginState extends State<Login> {
                       autofocus: true,
                       style: ElevatedButton.styleFrom(shape: StadiumBorder()),
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Splash()));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Splash()));
                       },
-                      child: Text("Login",style: GoogleFonts.bigShouldersText(),),
+                      child: Text(
+                        "Login",
+                        style: GoogleFonts.bigShouldersText(),
+                      ),
                     ),
                     SizedBox(
                       width: 10,
@@ -104,7 +106,10 @@ class _LoginState extends State<Login> {
                           ),
                         );
                       },
-                      child: Text('Sign up'),
+                      child: Text(
+                        'Sign up',
+                        style: GoogleFonts.bigShouldersText(),
+                      ),
                     )
                   ],
                 ),

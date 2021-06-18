@@ -17,7 +17,7 @@ class _AccountState extends State<Account> {
           leading: IconButton(
               color: Colors.black,
               icon: Icon(
-                Icons.arrow_back_ios,
+                Icons.keyboard_backspace
               ),
               onPressed: () {
                 Navigator.of(context).pop();
@@ -76,11 +76,11 @@ class ProfileMenu extends StatelessWidget {
                   child: Text(
                     'My Account',
                     style: GoogleFonts.bigShouldersText(
-                        color: Colors.black, fontSize: 22),
+                        color: Colors.black, fontSize: 15),
                   ),
                 ),
                 Icon(
-                  Icons.arrow_forward_ios_outlined,
+                  Icons.keyboard_tab_sharp
                  
                 ),
               ],
@@ -104,11 +104,11 @@ class ProfileMenu extends StatelessWidget {
                   child: Text(
                     'Notifications',
                     style: GoogleFonts.bigShouldersText(
-                        color: Colors.black, fontSize: 22),
+                        color: Colors.black, fontSize: 15),
                   ),
                 ),
                 Icon(
-                  Icons.arrow_forward_ios_outlined,
+                  Icons.keyboard_tab_sharp
                   
                 ),
               ],
@@ -132,11 +132,11 @@ class ProfileMenu extends StatelessWidget {
                   child: Text(
                     'Settings',
                     style: GoogleFonts.bigShouldersText(
-                        color: Colors.black, fontSize: 22),
+                        color: Colors.black, fontSize: 15),
                   ),
                 ),
                 Icon(
-                  Icons.arrow_forward_ios_outlined,
+                  Icons.keyboard_tab_sharp
                  
                 ),
               ],
@@ -160,11 +160,11 @@ class ProfileMenu extends StatelessWidget {
                   child: Text(
                     'Help Center',
                     style: GoogleFonts.bigShouldersText(
-                        color: Colors.black, fontSize: 22),
+                        color: Colors.black, fontSize: 15),
                   ),
                 ),
                 Icon(
-                  Icons.arrow_forward_ios_outlined,
+                  Icons.keyboard_tab_sharp
                  
                 ),
               ],
@@ -188,11 +188,11 @@ class ProfileMenu extends StatelessWidget {
                   child: Text(
                     'Logout',
                     style: GoogleFonts.bigShouldersText(
-                        color: Colors.black, fontSize: 22),
+                        color: Colors.black, fontSize: 15),
                   ),
                 ),
                 Icon(
-                  Icons.arrow_forward_ios_outlined,
+                  Icons.keyboard_tab_sharp
                   
                 ),
               ],
